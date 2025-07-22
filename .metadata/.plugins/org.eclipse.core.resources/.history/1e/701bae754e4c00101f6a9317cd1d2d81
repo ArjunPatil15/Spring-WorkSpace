@@ -1,0 +1,9 @@
+package com.ninfinity;
+
+public class Student {
+	int id;
+	String firstname;
+	String lastname;
+	String city;
+	
+}

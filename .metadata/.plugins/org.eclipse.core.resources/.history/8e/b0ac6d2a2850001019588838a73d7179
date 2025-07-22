@@ -1,0 +1,31 @@
+package com.ninfinity.java;
+
+import java.util.Scanner;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+public class TestApp {
+	public static void main(String[] args) {
+		System.out.print("-----------------Menu-------------------\n1.Insert Data\n2.Delete Data\n3.Update Data\n4.Show all Data\n-----Using Java Annotation-----\n5.Insert Data\n6.Delete Data\n7.Update Data\n8.Show all Data****************************************\nSelect one option : ");
+		Scanner sc = new Scanner(System.in);
+		int n = sc.nextInt();
+		
+		switch (n) {
+			case 1:
+			
+
+			case 2:
+				
+				
+			case 3:
+				
+				
+			case 4:
+			
+			
+		default:
+			System.out.println("Enter valid Option");
+		}
+	}
+}

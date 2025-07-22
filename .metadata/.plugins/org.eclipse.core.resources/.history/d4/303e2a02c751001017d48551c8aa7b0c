@@ -1,0 +1,108 @@
+package com.ninfinity;
+
+import java.util.List;
+import java.util.Scanner;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import com.ninfinity.dao.StudentDao;
+import com.ninfinity.entities.Student;
+
+/**
+ * Hello world!
+ *
+ */
+public class App 
+{
+	public static void main( String[] args )
+	{
+		ApplicationContext context = new ClassPathXmlApplicationContext("com/ninfinity/config.xml");
+
+		StudentDao studentDao = context.getBean("studentDao",StudentDao.class);
+
+		System.out.println(studentDao);
+
+		int choice;
+		String contChoice;
+		Scanner scanner = new Scanner(System.in);
+
+		do {
+			System.out.print("-----------------------MENU-----------------------\n1.Get One Student\n2.Get All Student\n3.Add Student\n4.Update Student\n5.Delete Student\n6.Exit\nEnter Your Choice : ");
+			choice = scanner.nextInt();
+			System.out.println("**************************************************");
+
+			switch (choice) {
+			case 1:
+				int id;
+				System.out.print("Enter Id for Student : ");
+				id = scanner.nextInt();
+				
+				Student s1 = studentDao.getOneStudent(id);
+				System.out.println("Student Info : ");
+				System.out.println(s1);
+
+				break;
+				
+			case 2:
+				System.out.println("list Of All Student : ");
+				List<Student> slist = studentDao.getAllStudents();
+				for (Student s : slist) {
+					System.out.println(s);
+				}
+				break;
+				
+			case 3:
+				int studentId;
+				String firstName,lastName,city;
+				System.out.print("Enter id : ");
+				studentId = scanner.nextInt();
+				System.out.print("Enter First Name : ");
+				firstName =  scanner.next();
+				System.out.print("Enter Last Name : ");
+				lastName = scanner.next();
+				System.out.print("Enter City : ");
+				city = scanner.next();
+				
+				Student s2 = new Student(studentId, firstName, lastName, city);
+				int result = studentDao.addStudent(s2);
+				System.out.println(result + " Student added");
+				break;
+				
+			case 4:
+				System.out.println("Enter student id for update");
+				id = scanner.nextInt();
+				Student s3 = studentDao.getOneStudent(id);
+				
+				System.out.print("Enter First Name : ");
+				s3.setFirstName(scanner.next());
+//				firstName =  scanner.next();
+				System.out.print("Enter Last Name : ");
+				s3.setLastName(scanner.next());
+//				lastName = scanner.next();
+				System.out.print("Enter City : ");
+				s3.setCity(scanner.next());
+//				city = scanner.next();
+					
+				
+				result = studentDao.updateOneStudent(s3);
+				System.out.println(result + " Student Updated");
+				break;
+				
+			case 5:
+
+				break;
+			case 6:	
+				System.out.println("Thank you for using ORM App");
+						System.exit(0);
+
+			default:
+				System.out.println("Please Enter valid choice");
+
+			}
+
+			System.out.print("Continue (y/n) :: ");
+			contChoice = scanner.next();
+		}while(contChoice.equals("y")); 
+	}
+}

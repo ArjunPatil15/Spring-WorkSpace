@@ -1,0 +1,71 @@
+package com.ninfinity;
+
+import java.util.Scanner;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import com.ninfinity.dao.StudentDao;
+
+/**
+ * Hello world!
+ *
+ */
+public class App 
+{
+	public static void main( String[] args )
+	{
+		ApplicationContext context = new ClassPathXmlApplicationContext("com/ninfinity/config.xml");
+
+		StudentDao studentDao = context.getBean("studentDao",StudentDao.class);
+
+		System.out.println(studentDao);
+		
+		String s1 = "Arjun";
+		System.out.println(s1);
+		System.out.println("--------");
+		s1.concat("Patil");
+		System.out.println(s1);
+
+		int choice;
+		String contChoice;
+		Scanner scanner = new Scanner(System.in);
+
+		do {
+			System.out.print("-----------------------MENU-----------------------\n1.Get One Student\n2.Get All Student\n3.Add Student\n4.Update Student\n5.Delete Student\n6.Exit\nEnter Your Choice : ");
+			choice = scanner.nextInt();
+
+			switch (choice) {
+			case 1:
+
+				break;
+				
+			case 2:
+
+				break;
+				
+			case 3:
+
+				break;
+				
+			case 4:
+
+				break;
+				
+			case 5:
+
+				break;
+			case 6:	
+				System.out.println("Thank you for using ORM App");
+						System.exit(0);
+
+			default:
+				System.out.println("Please Enter valid choice");
+
+			}
+
+			System.out.println("Continue (y/n) :: ");
+			contChoice = scanner.next();
+		}while(contChoice.equals("y")); 
+	}
+}

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy 3 elements to &apos;LifeCycle/src/main/java/com.ninfinity.scope&apos;&#x0D;&#x0A;- Original project: &apos;LifeCycle&apos;&#x0D;&#x0A;- Destination element: &apos;LifeCycle/src/main/java/com.ninfinity.scope&apos;&#x0D;&#x0A;- Original elements:&#x0D;&#x0A;     com.ninfinity.App.java&#x0D;&#x0A;     com.ninfinity.Car.java&#x0D;&#x0A;     config.xml" description="Copy elements" destination="/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.ninfinity.scope" element1="src/main/java/com/ninfinity/config.xml" element2="/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.ninfinity{App.java" element3="/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.ninfinity{Car.java" files="1" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1749564254894" units="2" version="1.0"/>
+</session>

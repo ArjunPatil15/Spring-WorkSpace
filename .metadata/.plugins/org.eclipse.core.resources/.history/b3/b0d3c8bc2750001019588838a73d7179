@@ -1,0 +1,16 @@
+package com.ninfinity.java;
+
+import java.util.Scanner;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+public class TestApp {
+	public static void main(String[] args) {
+		System.out.print("-----------------Menu-------------------\n1.Insert Data\n2.Delete Data\n3.Update Data\n4.Show all Data\n****************************************\nSelect one option : ");
+		Scanner sc = new Scanner(System.in);
+		int n = sc.nextInt();
+		
+		System.out.println(n);
+	}
+}

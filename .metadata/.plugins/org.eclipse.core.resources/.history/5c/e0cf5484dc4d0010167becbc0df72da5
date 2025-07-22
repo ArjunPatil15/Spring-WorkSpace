@@ -1,0 +1,11 @@
+package com.ninfinity.dao;
+
+import com.ninfinity.entities.Student;
+
+public interface StudentDao {
+	
+	public int insert(Student s1);
+	
+	public int delete(int id);
+	
+}

@@ -1,0 +1,24 @@
+package com.ninfinity;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import com.ninfinity.dao.StudentDao;
+
+/**
+ * Hello world!
+ *
+ */
+public class App 
+{
+    public static void main( String[] args )
+    {
+       ApplicationContext context = new ClassPathXmlApplicationContext("com/ninfinity/config.xml");
+       
+       StudentDao studentDao = context.getBean("studentDao",StudentDao.class);
+       
+       System.out.println(studentDao);
+       
+       System.out.print("-----------------------MENU-----------------------\n1.Get One Student\n2.Get All Student\n3.Add Student\n4.Update Student\n5.Delete Student\6.Exit\nEnter Your Choice : ");
+    }
+}

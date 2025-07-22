@@ -1,0 +1,39 @@
+package com.ninfinity.dao;
+
+import java.io.Serializable;
+import java.util.List;
+
+import org.springframework.orm.hibernate5.HibernateTemplate;
+
+import com.ninfinity.entities.Student;
+
+public class StudentDao {
+	
+	public HibernateTemplate template;
+
+	public HibernateTemplate getTemplate() {
+		return template;
+	}
+
+	public void setTemplate(HibernateTemplate template) {
+		this.template = template;
+	}
+	
+	
+	
+	public Student getOneStudent(int id) {
+		Student student = this.template.get(Student.class, id);
+		return student;
+	}
+	
+	public List<Student> getAllStudents(){
+		List<Student> sList = this.template.loadAll(Student.class);
+		return sList;
+	}
+	
+	public int addStudent(Student s1) {
+		Integer result = (Integer)this.template.save(s1);
+		return result;
+	}
+
+}

@@ -1,0 +1,52 @@
+package com.ninfinity;
+
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.jdbc.core.JdbcTemplate;
+
+import com.ninfinity.dao.StudentDaoImpl;
+import com.ninfinity.entities.Student;
+
+/**
+ * Hello world!
+ *
+ */
+public class App 
+{
+    public static void main( String[] args )
+    {
+        ApplicationContext context = new ClassPathXmlApplicationContext("com/ninfinity/config.xml");
+        
+//        JdbcTemplate template = context.getBean("template",JdbcTemplate.class);
+//        
+//        System.out.println(template);
+//        
+//        Student s1 = new Student();
+//        s1.setId(1);
+//        s1.setFirstname("Arjun");
+//        s1.setLastname("Patil");
+//        s1.setCity("Pune");
+//        
+//        String query = "insert into student value (?,?,?,?)";
+//        
+//        int result = template.update(query,s1.getId(),s1.getFirstname(),s1.getLastname(),s1.getCity());
+//        
+//        System.out.println("Record inserted : " + result);
+        
+        
+        
+        // To Add record
+        
+       StudentDaoImpl studentDao = context.getBean("studentDao",StudentDaoImpl.class);
+       
+       Student s1 = new Student();
+       s1.setId(10);
+       s1.setFirstname("Sachin");
+       s1.setLastname("Tendulkar");
+       s1.setCity("Mumbai");
+       
+       int result = studentDao.insert(s1);
+       System.out.println("Record inserted : "+result);
+    }
+}
